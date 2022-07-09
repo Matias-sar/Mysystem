@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loby</title>
+    <title>Ingreso de tareas</title>
 </head>
 <body>
     <div class = "container">
         <h1>Ingreso de tarea</h1>
-        <div class = "containe-table">
+        <div class = "container-form">
             <form action="/homework" method="post" class="form">
                 <div class="form-group">
                     <input type="text" placeholder="Nombre" class = "nombre" id="nombre" name="nombre">
@@ -18,17 +18,26 @@
                     <input type="text" placeholder="Descripcion" class = "descripcion" id="descripcion" name="descripcion">
                 </div>
                 <div class="form-group">
+                    <label for="fecha_entrega">Fecha estimada de entrega</label>
                     <input type="date" placeholder="Fecha estimada de entrega" class = "fecha_entrega" id="fecha_entrega" name="fecha_entrega">
                 </div>
                 <div class="form-group">
                     <input type="text" placeholder="Requerimiento" class = "requerimiento" id="requerimiento" name="requerimiento">
                 </div>
-                <input type="date" placeholder="Requerimiento">
-                <input type="submit" value="Enviar">
+                <div class="form-group">
+                    <label for="status">Estado</label>
+                    <select class = "status" id="status" name="status">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="En proceso">En proceso</option>
+                        <option value="Finalizado">Finalizado</option>
+                    </select>
+                </div>
+                <input type="submit" value="Guardar">
             </form>
+        </div>
+        <div class = 'container-table'>
+            <%-include('table/table.ejs')-%>
         </div>
     </div>    
 </body>
 </html>
-
-

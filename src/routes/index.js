@@ -12,8 +12,7 @@ router.get('/inicio', async (req, res) => {
         ...doc.data()        
     }))
     console.log(homework)
-    res.send('Hello world')
-    //Si no hay tareas se mostrara un mesnaje de advertencia
+    res.render('index', {homework})
 })
 
 router.post('/homework', async (req,res) =>{
@@ -25,7 +24,7 @@ router.post('/homework', async (req,res) =>{
         requerimiento,
         status
     })
-    res.send('Nueva tarea')
+    res.redirect('/inicio')
 })
 
 router.get('/edit-homework/:id', async (req, res) =>{
@@ -39,7 +38,7 @@ router.get('/edit-homework/:id', async (req, res) =>{
 
 router.get('/delete-homework/:id', async (req, res) =>{
     await db.collection('trabajo').doc(req.params.id).delete()
-    res.send('Tarea eliminada')
+    res.redirect('/inicio')
 })
 
 router.post('/update-homework/:id', async (req, res) =>{
@@ -49,6 +48,6 @@ router.post('/update-homework/:id', async (req, res) =>{
     res.send('Tarea actualizada')
 })
 
-module.exports = router
 
+module.exports = router
 

@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Fecha estimada de entrega</th>
+            <th>Requerimiento</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (var i = 0; i < homework.length; i++) { %>
+            <tr>
+                <td><%= homework[i].nombre %></td>
+                <td><%= homework[i].descripcion %></td>
+                <td><%= homework[i].fecha_entrega %></td>
+                <td><%= homework[i].requerimiento %></td>
+                <td><%= homework[i].status %></td>
+                <td>
+                    <a href="/edit-homework/<%= homework[i].id %>">
+                        <button>Editar</button>
+                    </a>
+                    <a href="/delete-homework/<%= homework[i].id %>">
+                        <button>Eliminar</button>
+                    </a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
