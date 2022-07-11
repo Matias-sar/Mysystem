@@ -1,9 +1,11 @@
-
-
 const {Router} = require('express')
 const {db} = require('../firebase')
 
 const router = Router()
+
+router.get('/', (req, res) => {
+    res.render('login',{title: 'MySystem'})
+})
 
 router.get('/inicio', async (req, res) => {
     const querySnapshot = await db.collection('trabajo').get()
@@ -26,6 +28,7 @@ router.post('/homework', async (req,res) =>{
     })
     res.redirect('/inicio')
 })
+
 
 router.get('/edit-homework/:id', async (req, res) =>{
     const doc = await db.collection('trabajo').doc(req.params.id).get()

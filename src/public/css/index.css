@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Joti+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 100%;
+    overflow: hidden;
+}
+.icon-logout{
+    float: right;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.header-menu{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.header-menu a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace
+}
+.header-menu a:hover{
+    text-decoration: underline;
+}
+.header-menu a:focus{
+    text-decoration: underline;
+}
+.header{
+    background-color: #148E00;
+}
